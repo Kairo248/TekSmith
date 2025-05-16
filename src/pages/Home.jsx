@@ -15,6 +15,7 @@ function Home() {
       <nav className="navbar">
         <div className="logo">TechSmith</div>
         <ul className="nav-links">
+          <li onClick={() => navigate('/products')}>All</li>
           <li onClick={() => navigate('/products?category=Phones')}>Phones</li>
           <li onClick={() => navigate('/products?category=Laptops')}>Laptops</li>
           <li onClick={() => navigate('/products?category=Accessories')}>Accessories</li>
