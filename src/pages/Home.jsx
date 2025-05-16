@@ -15,9 +15,10 @@ function Home() {
       <nav className="navbar">
         <div className="logo">TechSmith</div>
         <ul className="nav-links">
-          <li>Phones</li>
-          <li>Laptops</li>
-          <li>Accessories</li>
+          <li onClick={() => navigate('/products?category=Phones')}>Phones</li>
+          <li onClick={() => navigate('/products?category=Laptops')}>Laptops</li>
+          <li onClick={() => navigate('/products?category=Accessories')}>Accessories</li>
+          <li onClick={() => navigate('/products?category=Gaming')}>Gaming</li>
         </ul>
         <button className="login-btn" onClick={handleLogin}>Login</button>
       </nav>
