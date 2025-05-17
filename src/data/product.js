@@ -4,7 +4,7 @@ const products = [
         name: "MacBook Pro",
         description: "Powerful laptop with M3 chip",
         price: "/",
-        image: "/images/macbook.jpg",
+        image: "./assets/macM3.jpg",
         category:"Laptops"
     },
     {
