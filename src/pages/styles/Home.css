@@ -4,14 +4,26 @@
 
 .hero {
   position: relative;
+  overflow: hidden;
   text-align: center;
   margin-bottom: 2rem;
 }
 
 .hero-img {
-  width: 100%;
+  width: 120%;
   max-height: 500px;
   object-fit: cover;
+  animation: panImage 20s linear infinite alternate;
+  transform: translateX(0);
+}
+
+@keyframes panImage {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-20%);
+  }
 }
 
 .hero-text {
@@ -20,6 +32,7 @@
   left: 50%;
   transform: translate(-50%, -30%);
   color: white;
+  z-index: 2;
   text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
 }
 

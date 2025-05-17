@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Navbar.css';
+import { FaShoppingCart } from 'react-icons/fa';
 
 
 function Navbar() {
@@ -16,6 +17,9 @@ function Navbar() {
         <li onClick={() => navigate('/products?category=Accessories')}>Accessories</li>
         <li onClick={() => navigate('/products?category=Gaming')}>Gaming</li>
       </ul>
+      <div className="cart-icon" onClick={() => navigate('/cart')}>
+        <FaShoppingCart size={24} title="Cart" />
+      </div>
     </nav>
   );
 }

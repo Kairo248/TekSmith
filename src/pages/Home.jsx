@@ -2,15 +2,11 @@ import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import products from '../data/product';
+import { useCart } from '../context/CartContext';
 import './styles/Home.css';
 
 function Home() {
-  const [cart, setCart] = useState([]);
-
-  const addToCart = (product) => {
-    setCart((prevCart) => [...prevCart, product]);
-    alert(`${product.name} added to cart!`);
-  };
+  const { addToCart } = useCart();
 
   return (
     <div className="home-container">
@@ -18,7 +14,7 @@ function Home() {
 
       <section className="hero">
         <img
-          src="https://www.apple.com/v/home/bf/images/heroes/iphone-15-pro/hero_iphone15pro__i70z9oz3hj2i_largetall_2x.jpg" 
+          src="/images/feature-image.webp" 
           alt="Featured Product"
           className="hero-img"
         />
@@ -31,7 +27,7 @@ function Home() {
       <section className="product-section">
         <h2>Featured Products</h2>
         <div className="product-grid">
-          {products.map((product) => (
+          {products.filter(p => p.featured).map((product) => (
             <div className="product-card" key={product.id}>
               <img src={product.image} alt={product.name} />
               <h3>{product.name}</h3>
