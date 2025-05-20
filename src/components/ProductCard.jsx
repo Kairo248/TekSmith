@@ -1,16 +1,19 @@
 import React from 'react';
 import { useCart } from '../context/CartContext';
+import './ProductCard.css';
 
 function ProductCard({ product }) {
   const { addToCart } = useCart();
 
   return (
-    <div>
-      <img src={product.image} alt={product.name} style={{ width: "100%" }} />
-      <h3>{product.name}</h3>
-      <p>{product.description}</p>
-      <p><strong>R{product.price}</strong></p>
-      <button onClick={() => addToCart(product)}>Add to Cart</button>
+    <div className="product-card">
+      <img src={product.image} alt={product.name} className="product-image" />
+      <h3 className="product-name">{product.name}</h3>
+      <p className="product-description">{product.description}</p>
+      <p className="product-price">R{product.price}</p>
+      <button className="add-to-cart-btn" onClick={() => addToCart(product)}>
+        Add to Cart
+      </button>
     </div>
   );
 }

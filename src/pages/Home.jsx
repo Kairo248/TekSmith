@@ -1,33 +1,20 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import './styles/Home.css'; // Add styling here
+import React, { useState } from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import products from '../data/product';
+import { useCart } from '../context/CartContext';
+import './styles/Home.css';
 
 function Home() {
-  const navigate = useNavigate();
-
-  const handleLogin = () => {
-    navigate('/login');
-  };
+  const { addToCart } = useCart();
 
   return (
     <div className="home-container">
-      {/* NAVBAR */}
-      <nav className="navbar">
-        <div className="logo">TechSmith</div>
-        <ul className="nav-links">
-          <li onClick={() => navigate('/products')}>All</li>
-          <li onClick={() => navigate('/products?category=Phones')}>Phones</li>
-          <li onClick={() => navigate('/products?category=Laptops')}>Laptops</li>
-          <li onClick={() => navigate('/products?category=Accessories')}>Accessories</li>
-          <li onClick={() => navigate('/products?category=Gaming')}>Gaming</li>
-        </ul>
-        <button className="login-btn" onClick={handleLogin}>Login</button>
-      </nav>
+      <Navbar />
 
-      {/* HERO SECTION */}
       <section className="hero">
         <img
-          src="https://www.apple.com/v/home/bf/images/heroes/iphone-15-pro/hero_iphone15pro__i70z9oz3hj2i_largetall_2x.jpg"
+          src="/images/feature-image.webp" 
           alt="Featured Product"
           className="hero-img"
         />
@@ -36,8 +23,25 @@ function Home() {
           <p>Explore the future with our latest gadgets</p>
         </div>
       </section>
+
+      <section className="product-section">
+        <h2>Featured Products</h2>
+        <div className="product-grid">
+          {products.filter(p => p.featured).map((product) => (
+            <div className="product-card" key={product.id}>
+              <img src={product.image} alt={product.name} />
+              <h3>{product.name}</h3>
+              <p>{product.description}</p>
+              <p className="price">Price: R{product.price}</p>
+              <button onClick={() => addToCart(product)}>Add to Cart</button>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <Footer />
     </div>
   );
-};
+}
 
 export default Home;
