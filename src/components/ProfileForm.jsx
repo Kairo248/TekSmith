@@ -1,5 +1,5 @@
-// components/ProfileForm.jsx
 import React, { useState } from 'react';
+import './ProfileForm.css'; 
 
 function ProfileForm({ onSubmit }) {
   const [formData, setFormData] = useState({
@@ -21,7 +21,7 @@ function ProfileForm({ onSubmit }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="profile-form">
       <input
         type="text"
         name="name"
@@ -29,6 +29,7 @@ function ProfileForm({ onSubmit }) {
         value={formData.name}
         onChange={handleChange}
         required
+        className="form-input"
       />
       <input
         type="email"
@@ -37,6 +38,7 @@ function ProfileForm({ onSubmit }) {
         value={formData.email}
         onChange={handleChange}
         required
+        className="form-input"
       />
       <input
         type="password"
@@ -45,8 +47,9 @@ function ProfileForm({ onSubmit }) {
         value={formData.password}
         onChange={handleChange}
         required
+        className="form-input"
       />
-      <button type="submit">Create Profile</button>
+      <button type="submit" className="form-button">Create Profile</button>
     </form>
   );
 }

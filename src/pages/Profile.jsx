@@ -1,13 +1,12 @@
-// pages/Profile.jsx
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import ProfileForm from '../components/ProfileForm';
+import './styles/Profile.css';
 
 function Profile() {
   const navigate = useNavigate();
 
   const handleCreateProfile = (formData) => {
-    // Save user to localStorage (simulating backend storage)
     localStorage.setItem('user', JSON.stringify(formData));
     console.log('Profile Created:', formData);
 
@@ -16,9 +15,14 @@ function Profile() {
   };
 
   return (
-    <div>
-      <h1>Create Profile</h1>
-      <ProfileForm onSubmit={handleCreateProfile} />
+    <div className="profile-container">
+      <div className="profile-card">
+        <h1 className="profile-title">Create Profile</h1>
+        <ProfileForm onSubmit={handleCreateProfile} />
+        <p className="login-link">
+          Already have an account? <a href="/login">Login here</a>
+        </p>
+      </div>
     </div>
   );
 }
