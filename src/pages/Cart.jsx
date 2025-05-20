@@ -1,31 +1,45 @@
 import React from 'react';
-import { useCart } from '../context/CartContext'
+import { useCart } from '../context/CartContext';
 import { useNavigate } from 'react-router-dom';
+import './styles/Cart.css'; // ✅ Create and link a new CSS file
 
 function Cart() {
-  const { cartItems } = useCart();
+  const { cartItems, removeFromCart } = useCart();
   const navigate = useNavigate();
   
   const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
-
   return (
-    <div>
-      <h1>Your Cart</h1>
+    <div className="cart-page">
+      <div className="animated-bg"></div>
+
+      <h1 className="cart-title">Your Cart</h1>
+
       {cartItems.length === 0 ? (
-        <p>Your cart is empty.</p>
+        <p className="empty-msg">Your cart is empty.</p>
       ) : (
         <>
-        <ul>
-          {cartItems.map((item, index) => (
-          <li key={index}>
-            <strong>{item.name}</strong> - R{item.price} × {item.quantity} 
-          </li>
-          ))}
+          <ul className="cart-items">
+            {cartItems.map((item, index) => (
+              <li className="cart-item" key={index}>
+                <div>
+                  <strong>{item.name}</strong>
+                  <p>R{item.price} × {item.quantity}</p>
+                </div>
+                <button
+                 className="remove-btn"
+                 onClick={() => removeFromCart(item.id)}>
+                  Remove
+                 </button>
+              </li>
+            ))}
           </ul>
-          <h3>Total: R{total.toFixed(2)}</h3>
-           <button onClick={() => navigate('/checkout')}>Proceed to Checkout</button>
-          </>
+
+          <div className="cart-summary">
+            <h3>Total: <span>R{total.toFixed(2)}</span></h3>
+            <button className="checkout-btn" onClick={() => navigate('/checkout')}>Proceed to Checkout</button>
+          </div>
+        </>
       )}
     </div>
   );
