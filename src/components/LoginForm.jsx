@@ -1,5 +1,5 @@
-// components/LoginForm.jsx
 import React, { useState } from 'react';
+import './LoginForm.css'; // ← Import the CSS styles
 
 function LoginForm({ onSubmit, error }) {
   const [credentials, setCredentials] = useState({ email: '', password: '' });
@@ -17,7 +17,7 @@ function LoginForm({ onSubmit, error }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="login-form">
       <input
         type="email"
         name="email"
@@ -25,6 +25,7 @@ function LoginForm({ onSubmit, error }) {
         value={credentials.email}
         onChange={handleChange}
         required
+        className="login-input"
       />
       <input
         type="password"
@@ -33,9 +34,10 @@ function LoginForm({ onSubmit, error }) {
         value={credentials.password}
         onChange={handleChange}
         required
+        className="login-input"
       />
-      <button type="submit">Log In</button>
-      {error && <p>{error}</p>}
+      <button type="submit" className="login-button">Log In</button>
+      {error && <p className="login-error">{error}</p>}
     </form>
   );
 }
