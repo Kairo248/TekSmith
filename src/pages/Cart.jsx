@@ -24,7 +24,7 @@ function Cart() {
               <li className="cart-item" key={index}>
                 <div>
                   <strong>{item.name}</strong>
-                  <p>R{item.price} × {item.quantity}</p>
+                  <p>R{item.price} * {item.quantity}</p>
                 </div>
                 <button
                  className="remove-btn"
