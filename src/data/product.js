@@ -71,6 +71,15 @@ const products = [
         category:"Gaming",
         featured: true
     },
+    {
+        id: 9,
+        name: "Samsung 2024 Galaxy Book4 Pro Notebook",
+        description: " 14' 3K AMOLED Touchscreen",
+        price: " 31 853",
+        image: "./images/Galaxy-book4.afiv",
+        category:"Laptops",
+        featured: false
+    },
 ];
 
 export default products;
