@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import products from '../data/product';
@@ -7,6 +7,16 @@ import './styles/Home.css';
 
 function Home() {
   const { addToCart } = useCart();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 4000);
+
+    return () => clearTimeout(timer);
+  }, []);
+  
 
   return (
     <div className="home-container">
@@ -26,6 +36,14 @@ function Home() {
 
       <section className="product-section">
         <h2>Featured Products</h2>
+
+
+        {loading ? (
+          <div className="product-loader">
+            <div className="loader"></div>
+            <p>Loading products...</p>
+          </div>
+        ) : (
         <div className="product-grid">
           {products.filter(p => p.featured).map((product) => (
             <div className="product-card" key={product.id}>
@@ -37,6 +55,7 @@ function Home() {
             </div>
           ))}
         </div>
+        )}
       </section>
 
       <Footer />
