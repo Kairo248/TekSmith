@@ -14,6 +14,8 @@ function Navbar() {
         <li onClick={() => navigate('/products')}>All</li>
         <li onClick={() => navigate('/products?category=Phones')}>Phones</li>
         <li onClick={() => navigate('/products?category=Laptops')}>Laptops</li>
+        <li onClick={() => navigate('/products?category=Desktop')}>Desktop</li>
+        <li onClick={() => navigate('/products?category=Cameras')}>Cameras</li>
         <li onClick={() => navigate('/products?category=Accessories')}>Accessories</li>
         <li onClick={() => navigate('/products?category=Gaming')}>Gaming</li>
       </ul>
