@@ -3,7 +3,7 @@ const products = [
         id: 1,
         name: "MacBook Pro",
         description: "Powerful laptop with M3 chip",
-        price: "36 999",
+        price: "36999",
         image: "/images/macM3.jpg",
         category:"Laptops",
         featured: true
@@ -12,7 +12,7 @@ const products = [
         id: 2,
         name: "iPhone 15",
         description: "Latest Apple iPhone with advanced features",
-        price: "16 499",
+        price: "16499",
         image: "/images/iphone-15.webp",
         category:"Phones",
         featured: false
@@ -21,7 +21,7 @@ const products = [
         id: 3,
         name: "AirPods Pro",
         description: "Wireless noise-cancelling earbuds",
-        price: "4 999",
+        price: "4999",
         image: "/images/ap2.webp",
         category:"Accessories",
         featured: false
@@ -30,7 +30,7 @@ const products = [
         id: 4,
         name: "Playstation 5",
         description: "Latest Playstation with advanced and interactive features",
-        price: "13 499",
+        price: "13499",
         image: "./images/ps5.jpg",
         category:"Gaming",
         featured: true
@@ -39,7 +39,7 @@ const products = [
         id: 5,
         name: "Xbox Series X",
         description: "1TB with disc drive",
-        price: "13 999",
+        price: "13999",
         image: "./images/xbox-x.webp",
         category:"Gaming",
         featured: false
@@ -48,7 +48,7 @@ const products = [
         id: 6,
         name: "Galaxy Watch7",
         description: "Smart watch",
-        price: "7 999",
+        price: "7999",
         image: "./images/samsung-watch.webp",
         category:"Accessories",
         featured: false
@@ -57,7 +57,7 @@ const products = [
         id: 7,
         name: "Galaxy S25 Ultra",
         description: "Latest Samsung smartphone",
-        price: "30 999",
+        price: "30999",
         image: "./images/s25-ultra.avif",
         category:"Phones",
         featured: true
@@ -66,7 +66,7 @@ const products = [
         id: 8,
         name: "EA Sports FC 25 (PS5)",
         description: "Latest EA FC video game",
-        price: "1 299",
+        price: "1299",
         image: "./images/ea-25-ps5.webp",
         category:"Gaming",
         featured: true
@@ -75,7 +75,7 @@ const products = [
         id: 9,
         name: "Samsung 2024 Galaxy Book4 Pro Notebook",
         description: " 14' 3K AMOLED Touchscreen",
-        price: "31 853",
+        price: "31853",
         image: "./images/samsung-pc.webp",
         category:"Laptops",
         featured: false
@@ -84,7 +84,7 @@ const products = [
         id: 10,
         name: "Beats by Dr. Dre Studio Pro",
         description: "Wireless Bluetooth Noise Cancelling Headphones ",
-        price: "5 899",
+        price: "5899",
         image: "./images/bbDrDre.jpg",
         category:"Accessories",
         featured: true
@@ -93,7 +93,7 @@ const products = [
         id: 11,
         name: "Apple Watch Series 10 (GPS 46mm)",
         description: "Smartwatch with Jet Black Aluminium Case with Black Sport Band (M/L)",
-        price: "5 899",
+        price: "5899",
         image: "./images/apple-watch.jpg",
         category:"Accessories",
         featured: true
@@ -120,7 +120,7 @@ const products = [
         id: 14,
         name: "Apple iMac All-in-One Desktop Computer",
         description: "M4 chip with 8-core CPU and 8-core",
-        price: "31 499",
+        price: "31499",
         image: "./images/apple-desktop.jpg",
         category:"Desktop",
         featured: false
@@ -129,7 +129,7 @@ const products = [
         id: 15,
         name: "ADMI Gaming PC",
         description: "This ADMI Gaming PC is powered with NVIDIA GeForce RTX 4070 12GB GDDR6 with Ray Tracing, DLSS AI-powered graphics, and 4K Ready",
-        price: "31 499",
+        price: "31499",
         image: "./images/admi.jpg",
         category:"Desktop",
         featured: true
@@ -138,7 +138,7 @@ const products = [
         id: 16,
         name: "DJI Mini 3 Drone",
         description: "Rotating gimbal for vertical shooting",
-        price: "10 999,",
+        price: "10999,",
         image: "./images/drone.jpg",
         category:"Cameras",
         featured: true

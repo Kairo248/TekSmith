@@ -7,7 +7,10 @@ function Checkout() {
   const { cartItems, clearCart } = useCart();
   const navigate = useNavigate();
 
-  const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  const total = cartItems.reduce((acc, item) => {
+    const numericPrice = parsePrice = parseFloat(item.price.toString().replace(/,/g,''));
+    return acc + numericPrice * item.quantity;
+  }, 0);
 
   const handleCheckout = () => {
     alert('Thank you for your purchase!');
@@ -30,7 +33,9 @@ function Checkout() {
                 </li>
               ))}
             </ul>
-            <h3 className="checkout-total">Total: R{total.toFixed(2)}</h3>
+            <h3 className="checkout-total">
+              Total: R{total.toLocaleString(undefined, { minimumFractionDigits: 2 })}
+            </h3>
             <button className="checkout-btn" onClick={handleCheckout}>Confirm and Pay</button>
           </>
         )}

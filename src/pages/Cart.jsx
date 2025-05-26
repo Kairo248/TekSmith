@@ -4,10 +4,13 @@ import { useNavigate } from 'react-router-dom';
 import './styles/Cart.css';
 
 function Cart() {
-  const { cartItems, removeFromCart } = useCart(); // ⬅️ include removeFromCart
+  const { cartItems, removeFromCart } = useCart(); 
   const navigate = useNavigate();
 
-  const total = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  const total = cartItems.reduce((acc, item) => {
+    const numericPrice = parseFloat(item.price.toString().replace(/,/g, ''));
+    return acc + numericPrice * item.quantity;
+  }, 0);
 
   return (
     <div className="cart-page">
@@ -24,7 +27,7 @@ function Cart() {
               <li className="cart-item" key={index}>
                 <div>
                   <strong>{item.name}</strong>
-                  <p>R{item.price} × {item.quantity}</p>
+                 <p>R{parseFloat(item.price.toString().replace(/,/g, '')).toLocaleString(undefined, { minimumFractionDigits: 2 })} × {item.quantity}</p>
                 </div>
                 <button
                   className="remove-btn"
@@ -37,7 +40,7 @@ function Cart() {
           </ul>
 
           <div className="cart-summary">
-            <h3>Total: <span>R{total.toFixed(2)}</span></h3>
+            <h3>Total: <span>R{total.toLocaleString(undefined, { minimumFractionDigits : 2})}</span></h3>
             <button className="checkout-btn" onClick={() => navigate('/checkout')}>
               Proceed to Checkout
             </button>
