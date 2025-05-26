@@ -14,17 +14,26 @@ function AppRoutes() {
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/profile" element={<Profile />} />
-      <Route path="/products" element={
+
+      <Route
+       path="/products" 
+        element={
         <ProtectedRoute>
          <Products />
         </ProtectedRoute>
-       } />
-      <Route path="/cart" element={
+       } 
+       />
+      <Route
+       path="/cart" 
+       element={
         <ProtectedRoute>
          <Cart />
         </ProtectedRoute>
-       } />
-      <Route path="/checkout" element={
+       } 
+       />
+      <Route
+       path="/checkout" 
+       element={
         <ProtectedRoute>
          <Checkout />
         </ProtectedRoute>
