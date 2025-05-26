@@ -8,7 +8,7 @@ function Checkout() {
   const navigate = useNavigate();
 
   const total = cartItems.reduce((acc, item) => {
-    const numericPrice = parsePrice = parseFloat(item.price.toString().replace(/,/g,''));
+    const numericPrice = parseFloat(item.price.toString().replace(/,/g,''));
     return acc + numericPrice * item.quantity;
   }, 0);
 
