@@ -2,11 +2,12 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import { FaShoppingCart } from 'react-icons/fa';
+import { useAuth } from '../context/AuthContext';
 
 
 function Navbar() {
   const navigate = useNavigate();
-
+  const { logout } = useAuth();
   return (
     <nav className="navbar">
       <div className="logo" onClick={() => navigate('/')}>TechSmith</div>
@@ -22,6 +23,7 @@ function Navbar() {
       <div className="cart-icon" onClick={() => navigate('/cart')}>
         <FaShoppingCart size={24} title="Cart" />
       </div>
+       <button className="logout-btn" onClick={logout}>Logout</button>
     </nav>
   );
 }
